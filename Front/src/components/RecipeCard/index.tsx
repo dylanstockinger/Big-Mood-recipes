@@ -1,6 +1,7 @@
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Recipe } from "../../views/Home/index";
 
 // Import Swiper styles
 import "swiper/css";

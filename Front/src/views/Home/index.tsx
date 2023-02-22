@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-interface Recipe {
+export interface Recipe {
   title: string;
   difficulty: string;
   picture: string;
