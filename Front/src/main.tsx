@@ -27,6 +27,10 @@ export const router = createBrowserRouter([
     path: "/recipes",
     element: <Recipes />,
   },
+  {
+    path: "/register",
+    element: <Recipes />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
