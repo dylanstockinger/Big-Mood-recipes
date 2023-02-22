@@ -17,9 +17,14 @@ export interface Recipe {
 export const Home = () => {
   const [data, setData] = useState<Recipe[]>([]);
   //   const [data, setData] = useState([]);
+  console.log(data);
 
+  // fetch data from the back
   useEffect(() => {
-    fetch("http://localhost:5000/recipes")
+    fetch("http://localhost:5000/recipes", {
+      // make header for cors error
+      headers: { "Content-Type": "application/json" },
+    })
       .then((response) => response.json())
       .then((data) => setData(data));
   }, []);
@@ -27,6 +32,7 @@ export const Home = () => {
   return (
     <div className="recipes">
       <div>
+        {/* on explique que recipes vaut les données de data  */}
         <SliderComponent recipes={data} />
       </div>
     </div>

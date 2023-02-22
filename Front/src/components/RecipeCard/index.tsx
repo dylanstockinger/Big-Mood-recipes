@@ -1,37 +1,22 @@
 import React, { useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Recipe } from "../../views/Home/index";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-// import required modules
-import { Navigation } from "swiper";
-
 export interface SliderComponentProps {
   recipes: Recipe[];
 }
-export const SliderComponent = (recipes: SliderComponentProps) => {
-  console.log(recipes.recipes);
 
+export const SliderComponent = (recipes: SliderComponentProps) => {
   const dataRecipe = recipes.recipes;
+
+  // feature servant a générer les recettes aléatoires
+
   return (
-    <div className="recipe-card">
+    <div className="recipe-card ">
       {dataRecipe.map((recipe) => (
-        <Swiper
-          key={recipe.id}
-          navigation={true}
-          modules={[Navigation]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <img
-              className="object-fill w-90 h-96"
-              src={recipe.picture}
-              alt="image slide 1"
-            />
-          </SwiperSlide>
-        </Swiper>
+        <img
+          className="object-fill w-90 h-96"
+          src={`/recipesImage/${recipe.picture}`}
+          alt="image slide 1"
+        />
       ))}
     </div>
   );
