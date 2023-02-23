@@ -4,6 +4,7 @@ module.exports = {
   mode: "jit",
   
   theme: {
+    
     boxShadow: {
       sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
       DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
@@ -33,7 +34,7 @@ module.exports = {
 
     extend: {
       backgroundImage: {
-        "wood": "url('../assets/img/bg.jpg')",
+        'wood': "url('../assets/img/bg.jpg')",
       },
       width: {
         '300px': '300px',

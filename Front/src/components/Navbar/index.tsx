@@ -6,13 +6,13 @@ export const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="w-full bg-emerald-700 shadow">
+    <nav className="w-full bg-black shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="/">
-              <span className="flex flex-row text-2xl font-bold text-white mr-8">
-                O'Food <img className="w-8" src={Logo} alt="" />
+              <span className="flex flex-row text-4xl font-bold text-white mr-8">
+                O'Food <span className=" text-yellow-400  "> . </span>{" "}
               </span>{" "}
             </Link>
 
