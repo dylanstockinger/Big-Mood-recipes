@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Recipe } from "../../views/Home/index";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,20 +17,25 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   const dataRecipe = recipes.recipes;
+  const [randomRecipe, setRandomRecipe] = useState<Recipe[]>();
+  const shuffled = dataRecipe.sort(() => Math.random() - 0.5).slice(0, 5);
+  const shuffledDifficulty = dataRecipe
+    .filter((recipe) => recipe.difficulty == "Facile")
+    .slice(0, 5);
 
-  // feature servant a générer les recettes aléatoires
+  console.log(dataRecipe.filter((recipe) => recipe.difficulty == "Facile"));
 
   return (
     <div className="sm:flex sm:flex-wrap sm:justify-center  ">
       <section className="flex sm:m-8 justify-center sm:hover:">
         <div className="innver__container">
-          <h1 className="sm:mt-8 mb-8 mt-3 sm:text-5xl text-2xl mb-8 text-center">
-            Les <span className="text-yellow-400 ">5</span> recettes les mieux
-            notées
+          <h1 className="mt-[1rem] sm:mt-8 mb-4 mt-3 sm:text-5xl text-2xl mb-8 text-center">
+            <span className="text-yellow-400 ">5</span> recettes aléatoire pour
+            votre plaisir !
           </h1>
           <div className=" ">
             <Swiper
-              className="sm:w-[500px]  sm:h-[550px] sm:scale-80 sm:hover:scale-90  sm:transition scale-80 hover:scale-90  transition h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
+              className="sm:w-[500px]  w-[350px] sm:h-[550px] sm:scale-80 sm:hover:scale-90  sm:transition scale-80 hover:scale-90  transition h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
               modules={[Navigation, Pagination]}
               pagination={{ clickable: true }}
               slidesPerView={1}
@@ -43,9 +48,9 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
                 swiper.navigation.update();
               }}
             >
-              {dataRecipe.map((recipe) => (
+              {shuffled.map((recipe) => (
                 <SwiperSlide className=" flex justify-center" key={recipe.id}>
-                  <div className=" flex flex-col text-center justify-center  sm:w-full  w-300px">
+                  <div className=" flex flex-col text-center justify-center  sm:w-full w-full  w-300px">
                     <img
                       className="sm:w-full w-full  m-auto "
                       src={`/recipesImage/${recipe.picture}`}
@@ -58,7 +63,7 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
                     <div className="text-center mt-[30px]">
                       <button
                         type="button"
-                        className="sm:mb-[7rem] text-black bg-yellow-500 hover:bg-black text-white focus:outline-none  font-medium rounded-full text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900"
+                        className="mb-[3.5rem] sm:mb-[7rem] text-black bg-yellow-500 hover:bg-black text-white focus:outline-none  font-medium rounded-full text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900"
                       >
                         Show the recipe
                       </button>
@@ -85,13 +90,13 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
       </article>
       <section className="flex sm:m-8 justify-center sm:hover:">
         <div className="innver__container">
-          <h1 className="sm:mt-8 mb-8 mt-3 sm:text-5xl text-2xl mb-8 text-center">
-            Les <span className="text-yellow-400 ">5</span> recettes les mieux
-            notées
+          <h1 className="mt-[1rem] sm:mt-8 mb-4 mt-3 sm:text-5xl text-2xl mb-8 text-center">
+            Les <span className="text-yellow-400 ">5</span> recettes les plus
+            simples à faire
           </h1>
           <div className=" ">
             <Swiper
-              className="sm:w-[500px] sm:h-[550px] sm:scale-80 sm:hover:scale-90  sm:transition scale-80 hover:scale-90  transition h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
+              className="sm:w-[500px]  w-[350px] sm:h-[550px] sm:scale-80 sm:hover:scale-90  sm:transition scale-80 hover:scale-90  transition h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
               modules={[Navigation, Pagination]}
               pagination={{ clickable: true }}
               slidesPerView={1}
@@ -104,9 +109,9 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
                 swiper.navigation.update();
               }}
             >
-              {dataRecipe.map((recipe) => (
+              {shuffledDifficulty.map((recipe) => (
                 <SwiperSlide className=" flex justify-center" key={recipe.id}>
-                  <div className=" flex flex-col text-center justify-center  sm:w-full  w-300px">
+                  <div className=" flex flex-col text-center justify-center  sm:w-full w-full  w-300px">
                     <img
                       className="sm:w-full w-full  m-auto "
                       src={`/recipesImage/${recipe.picture}`}
@@ -119,7 +124,7 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
                     <div className="text-center mt-[30px]">
                       <button
                         type="button"
-                        className=" mb-[7rem] text-black bg-yellow-500 hover:bg-black text-white focus:outline-none  font-medium rounded-full text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900"
+                        className="sm:mb-[7rem] mb-[3.5rem] text-black bg-yellow-500 hover:bg-black text-white focus:outline-none  font-medium rounded-full text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900"
                       >
                         Show the recipe
                       </button>
