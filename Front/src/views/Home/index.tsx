@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { SearchBar } from "../../components/SearchBar";
 
 import { SliderComponent } from "../../components/SwiperRecipeCard";
 export interface Recipe {
@@ -11,9 +12,11 @@ export interface Recipe {
   cookingTime: number;
   ingredientList: string;
   steps: string;
+
+  onSubmit: () => void;
 }
 
-export const Home = () => {
+export const Home = (handleSubmit: any) => {
   const [data, setData] = useState<Recipe[]>([]);
   //   const [data, setData] = useState([]);
 
@@ -33,6 +36,7 @@ export const Home = () => {
   return (
     <div className="recipes">
       <div>
+        <SearchBar onSearch={handleSubmit} />
         {/* on explique que recipes vaut les données de data  */}
         <SliderComponent recipes={data} />
       </div>
