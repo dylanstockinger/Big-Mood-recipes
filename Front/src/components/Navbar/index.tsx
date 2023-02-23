@@ -6,13 +6,13 @@ export const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="w-full bg-emerald-700 shadow">
+    <nav className="w-full bg-black shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="/">
-              <span className="flex flex-row text-2xl font-bold text-white mr-8">
-                O'Food <img className="w-8" src={Logo} alt="" />
+              <span className="flex flex-row text-4xl font-bold text-white mr-8">
+                O'Food <span className=" text-yellow-400  "> . </span>{" "}
               </span>{" "}
             </Link>
 
@@ -73,32 +73,18 @@ export const Navbar = () => {
               </li>
             </ul>
 
-            <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-              <Link
-                to="/login"
-                className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-              >
-                Sign in
-              </Link>
-
-              <Link
-                to="javascript:void(0)"
-                className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-              >
-                Sign up
-              </Link>
-            </div>
+            <div className="mt-3 space-y-2 lg:hidden md:inline-block"></div>
           </div>
         </div>
         <div className="hidden space-x-2 md:inline-block">
           <Link
-            to="javascript:void(0)"
+            to="/login"
             className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
           >
             Sign in
           </Link>
           <Link
-            to="javascript:void(0)"
+            to="/register"
             className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
           >
             Sign up
