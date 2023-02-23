@@ -12,11 +12,11 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
                 2 carottes,
                 2 courgettes,
                 200 g de pousses de soja,
-                Jeunes pousses d’épinard,
-                Champignons shiitakés ou de Paris,
+                1 jeune pousse d’épinard,
+                3 champignons de Paris,
                 2 ou 3 gousses d’ail,
                 1 morceau de gingembre râpé,
-                500 g de boeuf à braiser,
+                500g de boeuf à braiser,
                 Des oeufs (un par personne),
                 Sauce soja,
                 Cassonade ou sucre,
@@ -37,28 +37,6 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
              'Moyen', 1,
              10, 
              'bimbimpap.jpg'),
-
-             ('BLINI AU SAUMON', 
-                'poivre,
-                sel,
-                Blini,
-                crème fleurette,
-                10 cl,
-                de crème fleurette (ou crème liquide),
-                carré frais,
-                saumon fumé,
-                oeuf,
-                ciboulette', 
-            'Parfait pour vos soirées apéro-dinatoire',
-            'Écrasez à la fourchette les Carrés frais puis ajoutez sel, poivre, ciboulette.
-            Montez en chantilly la crème fleurette, puis incorporez délicatement le mélange à base de Carré frais, pour obtenir un mélange onctueux.
-            Prendre un blinis, le garnir de la composition précédente, y mettre un morceau de saumon fumé, puis un peu d’oeufs de lumps.
-            Garnir les autres, puis poser dans un plat de service avec des rondelles de citron joliment découpées, et les minis tomates.
-            Peut se déguster en entrée, ou en plat de résistance avec une salade à l’huile de noix, ou à l’apéro.',
-             10, 
-             'Facile', 1,
-             3, 
-             'blini-saumon.jpg'),
 
             ('BRUSCHETTA ITALIENNE', 
             '8 tomates,
