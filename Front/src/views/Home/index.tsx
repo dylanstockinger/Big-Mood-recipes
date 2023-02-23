@@ -21,17 +21,15 @@ export const Home = (handleSubmit: any) => {
   //   const [data, setData] = useState([]);
 
   // fetch data from the back
+
   useEffect(() => {
-    (async () => {
-      await fetch("http://localhost:5000/recipes", {
-        // make header for cors error
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((response) => response.json())
-        .then((data) => setData(data));
-    })(),
-      [];
-  });
+    fetch("http://localhost:5000/recipes", {
+      // make header for cors error
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
+      .then((data) => setData(data));
+  }, []);
 
   return (
     <div className="recipes">
