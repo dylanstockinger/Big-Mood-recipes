@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { SliderComponent } from "../../components/RecipeCard";
+
+import { SliderComponent } from "../../components/SwiperRecipeCard";
 export interface Recipe {
   title: string;
   difficulty: string;
@@ -17,17 +16,19 @@ export interface Recipe {
 export const Home = () => {
   const [data, setData] = useState<Recipe[]>([]);
   //   const [data, setData] = useState([]);
-  console.log(data);
 
   // fetch data from the back
   useEffect(() => {
-    fetch("http://localhost:5000/recipes", {
-      // make header for cors error
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => response.json())
-      .then((data) => setData(data));
-  }, []);
+    (async () => {
+      await fetch("http://localhost:5000/recipes", {
+        // make header for cors error
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((response) => response.json())
+        .then((data) => setData(data));
+    })(),
+      [];
+  });
 
   return (
     <div className="recipes">
