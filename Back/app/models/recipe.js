@@ -36,6 +36,9 @@ Recipe.init({
     picture: {
 		type: DataTypes.TEXT,
 	},
+	type: {
+		type: DataTypes.TEXT,
+	},
 }, {
 	sequelize,
 	tableName: 'recipe'

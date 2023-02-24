@@ -30,10 +30,12 @@
     "user_id" INT REFERENCES "user"("id"),
     "rate" INT NOT NULL DEFAULT 0,
     "picture" TEXT,
+    "type" TEXT NOT NULL,
     "created_at" timestamptz NOT NULL DEFAULT NOW(),
-    "updated_at" timestamptz   
+    "updated_at" timestamptz  
+    
  );
 
 
- COMMIT;
+ COMMIT; 
 

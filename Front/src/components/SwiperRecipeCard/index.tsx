@@ -2,12 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import { Recipe } from "../../views/Home/index";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 export interface SliderComponentProps {
   recipes: Recipe[];
@@ -27,7 +28,7 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
 
   return (
     <div className="sm:flex sm:flex-wrap sm:justify-center  ">
-      <section className="flex sm:m-8 justify-center sm:hover:">
+      <section className="flex sm:m-8 justify-center ">
         <div className="innver__container">
           <h1 className="mt-[1rem] sm:mt-8 mb-4 mt-3 sm:text-5xl text-2xl mb-8 text-center">
             <span className="text-yellow-400 ">5</span> recettes aléatoire pour
@@ -35,8 +36,12 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
           </h1>
           <div className=" ">
             <Swiper
-              className="sm:w-[500px]  w-[350px] sm:h-[550px] sm:scale-80 sm:hover:scale-90  sm:transition scale-80 hover:scale-90  transition h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
-              modules={[Navigation, Pagination]}
+              className="sm:w-[500px]  w-[350px] sm:h-[550px] sm:scale-90 sm:hover:scale-100 sm:transition   h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
+              modules={[Navigation, Pagination, Autoplay]}
+              speed={400}
+              autoplay={{
+                delay: 13000,
+              }}
               pagination={{ clickable: true }}
               slidesPerView={1}
               navigation={{
@@ -78,7 +83,7 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
 
       <article className=" m-auto text-center  justify-center  sm:w-[800px] w-[300px] ">
         <div className="">
-          <p className="sm:leading-normal	 leading-snug sm:text-3xl sm:mb-10 mt-6 p-15  ">
+          <p className="sm:leading-normal sm:text-3xl sm:mb-10 mt-6 p-15  ">
             Avec O'Food sentez-vous libre de cuisiner selon vos envies. Pas de
             régimes particulier, juste de la pleine conscience et l'envie de
             cuisiner meilleur. Aujourd'hui le fait de se limiter, de se
@@ -96,9 +101,13 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
           </h1>
           <div className=" ">
             <Swiper
-              className="sm:w-[500px]  w-[350px] sm:h-[550px] sm:scale-80 sm:hover:scale-90  sm:transition scale-80 hover:scale-90  transition h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
-              modules={[Navigation, Pagination]}
+              className="sm:w-[500px]  w-[350px] sm:h-[550px] sm:scale-90 sm:hover:scale-100 sm:transition scale-80 hover:scale-90  transition h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
+              modules={[Navigation, Pagination, Autoplay]}
               pagination={{ clickable: true }}
+              speed={400}
+              autoplay={{
+                delay: 13000,
+              }}
               slidesPerView={1}
               navigation={{
                 prevEl: navigationPrevRef.current,

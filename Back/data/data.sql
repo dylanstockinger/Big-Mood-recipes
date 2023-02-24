@@ -6,7 +6,7 @@ INSERT INTO "user" ("email","username", "password", "is_admin")
     VALUES  ('admin@test.fr', 'Admin', '$2a$10$3ncnTtiyg959A9NHM/vvgeXh2e44mS.ofyyB7JMW0QqVJgyoa0mNi', 'true'),
             ('user@test.fr', 'User', '$2a$10$DPy.aIQLYOoUphojbL1xder6nnSLSvvOWRaA5FfgqH2OJ750Gw4aW', 'false');
 
-INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cooking_time", "difficulty", "user_id", "rate", "picture") 
+INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cooking_time", "difficulty", "user_id", "rate", "picture", "type") 
     VALUES  ('BIMBIMBAP AU BOEUF', 
                 'Riz,
                 2 carottes,
@@ -36,7 +36,9 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
              45, 
              'Moyen', 1,
              10, 
-             'bimbimpap.jpg'),
+             'bimbimpap.jpg',
+             'Plat'
+             ),
 
             ('BRUSCHETTA ITALIENNE', 
             '8 tomates,
@@ -53,7 +55,8 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
              10, 
              'Facile', 1,
              8, 
-             'bruschetta.jpg'),
+             'bruschetta.jpg',
+             'Entrée'),
 
              ('LASAGNE BOLOGNAISE', 
             ' - Pour la bechamel : ,
@@ -87,7 +90,8 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
              60, 
              'Moyen', 1,
              4, 
-             'lasagne.jpg'),
+             'lasagne.jpg',
+             'Plat'),
 
              ('OSSO BUCCO', 
             ' Osso Buco 1.5 kg,
@@ -122,7 +126,8 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
              45, 
              'Difficile', 1,
              6, 
-             'osso-bucco.jpg'),
+             'osso-bucco.jpg',
+             'Plat'),
 
              ('PANCAKES', 
             ' Farine 125 g,
@@ -144,7 +149,8 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
              15, 
              'Facile', 2,
              8, 
-             'pancakes.jpg'),
+             'pancakes.jpg',
+             'Dessert'),
 
              ('PASTA PESTO ROSSO', 
             ' 100 g Pâtes (Rigatoni)
@@ -165,7 +171,8 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
              15, 
              'Très facile', 2,
              7, 
-             'pasta-pesto-rosso.jpg'),
+             'pasta-pesto-rosso.jpg',
+             'Plat'),
 
              ('PASTA PESTO VERDE', 
             ' Parmigiano Reggiano AOP Giovanni Ferrari : 30 g,
@@ -186,7 +193,8 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
             15, 
              'Facile', 2,
              6, 
-             'pasta-pesto-verde.jpg'),
+             'pasta-pesto-verde.jpg',
+             'Plat'),
 
              ('SALADE DE PATES À LA FETA', 
             ' 240 g de pâtes selon votre choix,
@@ -206,7 +214,8 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
              20, 
              'Facile', 1,
              3, 
-             'pasta-salad-feta.jpg'),
+             'pasta-salad-feta.jpg',
+             'Plat'),
 
              ('POKEBOWL SAUMON', 
             ' 1 pavé de saumon,
@@ -229,7 +238,8 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
              15, 
              'Moyen', 2,
              9, 
-             'poke-bowls-salmon.jpg'),
+             'poke-bowls-salmon.jpg',
+             'Plat'),
 
              ('SALADE COMPOSEE', 
             ' Sucrine,
@@ -260,7 +270,8 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
              15, 
              'Facile', 2,
              3, 
-             'salade-composee.jpg'),
+             'salade-composee.jpg',
+             'Entrée'),
 
              ('SALADE CRISPY CHICKEN Gaulois', 
             ' 1 étui de Crousty Chicken Long Filet’s Le Gaulois,
@@ -279,8 +290,10 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
             ' Croustillante, croquante et fraîche.
              Cette salade se distingue par ses tendres morceaux de poulet pané déposés sur un lit de salade, ses tomates et ses délicieux copeaux de fromage. ',
             
-            'Préchauffez le four à 210°C. 
+            'Étape 1
+            Préchauffez le four à 210°C. 
             Enfournez les Crousty Chicken Long Filet’s Le Gaulois pendant 12 minutes une fois le four chaud. 
+            Étape2
             Pendant ce temps, préparez la sauce en mixant le jaune d’œuf, la gousse d’ail, 30g de parmesan, l’huile de tournesol, le vinaigre, le sel et le poivre. 
             Mêlez la laitue romaine à la sauce et ajoutez-y le reste de parmesan en copeaux, les croûtons, les œufs durs et les tomates en morceaux.
             Disposez la salade dans des coupelles. 
@@ -288,116 +301,136 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
              25, 
              'Facile', 2,
              7, 
-             'salade-crispy-chicken.jpg'),
+             'salade-crispy-chicken.jpg',
+             'Entrée'),
 
              ('SALADE EPINARD POULET', 
-            ' 3 blancs de poulet,
+            '3 blancs de poulet,
             2 citrons verts,
             1 gousse d’ail,
             200 g de pousses d’épinards,
             1 mangue bien mûre,
-            50 g de noix de cajou,
-            quelques feuilles de basilic et de coriandre,
+            50g de noix de cajou,
+            Quelques feuilles de basilic et de coriandre,
             2 cuillère(s) à soupe d’huile,
-            sel,
-            piment', 
-            ' Une salade à la fois fraîche, croquante et fondante. ',
-            'Faites mariner 30 mn 3 blancs de poulet dans le jus et le zeste de 1 citron vert avec 1 gousse d’ail hachée. 
-            Faites griller puis découpez en lamelles.
+            Sel,
+            Piment', 
+            'Une salade à la fois fraîche, croquante et fondante. ',
+            'Étape 1
+            Faites mariner 30 mn 3 blancs de poulet dans le jus et le zeste de 1 citron vert avec 1 gousse d’ail hachée. 
+            Faites griller puis découpez les en lamelles.
+            Étape 2
             Mélangez 200 g de pousses d’épinards avec 1 mangue bien mûre coupée en lamelles, 50 g de noix de cajou dorées à la poêle, quelques feuilles de basilic et de coriandre, ainsi que le poulet.
-            Mélangez 2 c. à soupe d’huile, le jus de 1 citron vert, sel, piment selon votre goût et assaisonnez-en la salade.',
+            Étape 3
+            Mélangez 2 c.à.s d’huile, le jus de 1 citron vert, sel, piment selon votre goût et assaisonnez la salade.',
              20, 
              'Facile', 1,
              6, 
-             'salade-epinard-poulet.jpg'),
+             'salade-epinard-poulet.jpg',
+             'Entrée'),
 
              ('PAVE DE SAUMON GRILLEE', 
-            ' 2 pavés de saumon frais
+            '2 pavés de saumon frais
             De l’huile d’olive
             1 citron
             Du sel
             Du poivre noir', 
-            ' Préparez cette recette de pavé de saumon grillé: une recette de cuisine facile, assaisonnée avec le jus d’un citron fraîchement pressé. ',
-            ' D’abord, chauffez une planche ou une grande poêle, à feu très vif. 
+            'Préparez cette recette de pavé de saumon grillé: une recette de cuisine facile, assaisonnée avec le jus d’un citron fraîchement pressé. ',
+            'Étape 1 
+            D’abord, chauffez une planche ou une grande poêle, à feu très vif. 
             Versez-y un petit filet d’huile d’olive.
-            Ensuite, salez et poivrez les pavés de saumon et faites- les cuire à la poêle.
+            Ensuite, salez et poivrez les pavés de saumon et faites-les cuire à la poêle.
+            Étape 2
             En fonction de l’épaisseur des pavés, la cuisson du saumon peut prendre plus longtemps. 
             En principe, calculez 2 minutes de chaque côté.
-            Une fois écoulé ce temps, vous pouvez réduire la température du feu à la moitié et le laisser un peu plus de temps de cuisson pour le poisson. 
-            Etant donné que le saumon est un poisson gras , il va cuire dans ses jus ou dans sa propre graisse.
-            Une fois les pavés de saumon prêts, retirez-les de la poêle ou planche, et déposez chacun sur une assiette.
-            Coupez le citron et exprimez chaque moitié sur chaque pavé, pour l’asperger avec le jus, de manière généreuse.',
+            Étape 3
+            Une fois le temps écoulé, vous pouvez réduire la température du feu à la moitié et le laisser un peu plus de temps de cuisson pour le poisson. 
+            Etant donné que le saumon est un poisson gras , il va cuire dans son jus ou dans sa propre graisse.
+            Une fois les pavés de saumons prêts, retirez-les de la poêle ou planche, et déposez les sur une assiette.
+            Étape 4
+            Coupez le citron et mettez le jus de celui-ci sur les pavés, de manière généreuse.',
              7, 
              'Moyen', 2,
              3, 
-             'saumon_grillé.jpg'),
+             'saumon_grillé.jpg',
+             'Plat'),
 
              ('SOUPE POMMES DE TERRE', 
-            ' 5 oignons
+            '5 oignons
             4 pommes de terre
-            3 c. à soupe de sucre en poudre
-            1 c. à soupe de maïzena
-            50 cl bouillon de légumes
-            125 g fromage râpé
-            25 g beurre
+            3 c.à.s de sucre en poudre
+            1 c.à.s de maïzena
+            50cl bouillon de légumes
+            125g fromage râpé
+            25g beurre
             Sel, poivre', 
             ' Une recette nature et onctueuse, qui revisite la préparation des pommes de terre dans un potage relevé de cerfeuil, avec la douceur incomparable née de la crème fleurette et du bouillon de volaille ',
-            'Pelez et émincez les oignons. Épluchez et coupez les pommes de terre en cubes.
+            'Étape 1
+            Pelez et émincez les oignons. Épluchez et coupez les pommes de terre en cubes.
             Faites dorer 10 min en mode dorer les oignons avec le sucre dans le beurre.
+            Étape 2
             Mélangez avec la maïzena.
-            Ajoutez les pommes de terre, le bouillon de légumes, le bouillon de légumes, salez et poivrez puis lancez la cuisson sous pression pour 8 min.
+            Ajoutez les pommes de terre, le bouillon de légumes, salez et poivrez puis lancez la cuisson sous pression pour 8 min.
             Placez la soupe dans des assiettes creuses, servez avec le fromage râpé.',
              35, 
              'Difficile', 1,
              3, 
-             'soupe-potato.jpg'),
+             'soupe-potato.jpg',
+             'Plat'),
 
-             ('VERRINE  DE FRAISES AUX SPECULOS', 
+             ('VERRINE  DE FRAISES AUX SPECULOOS', 
             '300g de fraises
             300g de fromage blanc
             1 paquert de spéculos', 
             ' Délicieux, très frais avec des saveurs qui se marient très bien. ',
-            'Mixez puis déposez la moitié des spéculoos au fond de chaque verrine.
+            'Étape 1
+            Mixez puis déposez la moitié des spéculoos au fond de chaque verrine.
             Recouvrez de fromage blanc sur environ 3 cm de hauteur.
-            Mixez les fraises (sauf 2) et répartissez-les dans chaque verrine.
+            Étape 2
+            Mixez les fraises (en garder 2) et répartissez-les dans chaque verrine.
             Recouvrez avec le reste des spéculos puis terminez par 1/2 fraise.
+            Étape 3
             Mettez au frais avant de servir.',
              20, 
              'Très facile', 1,
              9, 
-             'speculos_fraise.jpg'),
+             'speculos_fraise.jpg',
+             'Dessert'),
 
 
              ('TARTE AUX POMMES', 
-            ' Pâte sablée,
+            'Pâte sablée,
             Pâte sablée 1 rouleau,
             Pomme Golden 3,
             Oeuf 3,
-            Sucre 3 c à s,
+            Sucre 3 c.à.s,
             Crème liquide 20 cl,
             Cannelle 1 pincée,
             Sucre vanillé 1 sachet', 
             ' Découvrez cette recette de tarte aux pommes, grand classique des tartes sucrées française ! 
             Succombez à ces pommes fondantes sur une pâte sablée croustillante. ',
-            'Déroulez, étalez et piquez la pâte dans un moule à tarte. 
+            'Étape 1
+            Déroulez, étalez et piquez la pâte dans un moule à tarte. 
             Pelez, videz et coupez en fines tranches les pommes.
             Posez-les sur la pâte en rosace.
+            Étape 2
             Dans un saladier, battez les œufs avec le sucre, puis ajoutez la crème et la cannelle. Versez le mélange sur les pommes.
             Mettez au four à 210°C (thermostat 7) pour 40 minutes environ. 
             Vers la fin de la cuisson, répartissez sur la tarte le sucre vanillé et remettez au four pour caramélisé.',
              35, 
              'Facile', 2,
              3, 
-             'tarte-pommes.jpg'),
+             'tarte-pommes.jpg',
+             'Dessert'),
 
              ('FAJITAS AU POULET', 
-            ' 2 poivrons, rouge ou jaune de préférence, coupés en lanières,
-            60 ml (1/4 tasse) d’huile d’olive,
+            '2 poivrons, rouge ou jaune de préférence, coupés en lanières,
+            1/4 tasse d’huile d’olive,
             2 à 3 oignons, émincés,
-            15 ml (1 c. à soupe) de beurre,
+            1 c.à.s de beurre,
             2 demi-poitrines de poulet désossées et sans la peau, émincées,
-            15 ml (1 c. à soupe) d’assaisonnement au chili,
-            5 ml (1 c. à thé) d’origan séché,
+            1 c.à.s d’assaisonnement au chili,
+            1 c.à.s d’origan séché,
             8 tortillas moyennes,
             Sel et poivre,
             Garnitures au choix,
@@ -409,43 +442,47 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
             Quartiers de lime,
             Coriandre fraîche', 
             ' Découvrez notre recette de fajitas au poulet et aux légumes, pour un repas croustillant et plein de bonne humeur ! ',
-            'Dans une grande poêle à feu moyen, dorer les poivrons dans 15 ml (1 c. à soupe) de l’huile. 
+            'Étape 1
+            Dans une grande poêle à feu moyen, dorer les poivrons dans 15 ml (1 c.à.s) de l’huile. 
             Saler et poivrer. 
-            Réserver sur une assiette.
-            Dans la même poêle, caraméliser les oignons dans 15 ml (1 c. à soupe) d’huile et le beurre. 
+            Dans la même poêle, caraméliser les oignons dans 15 ml (1 c.à.s) d’huile ainsi que du beurre. 
             Saler et poivrer. 
-            Réserver avec les poivrons.
-            Dans la même poêle, dorer le poulet dans le reste de l’huile avec les épices.
+            Étape 2
+            Dans la même poêle, dorer le poulet dans le reste dhuile avec les épices.
             Saler et poivrer. 
-            Remettre les légumes réservés dans la poêle. 
+            Mettre les légumes dans la poêle.
+            Étape 3 
             Poursuivre la cuisson 1 minute en remuant.
             Retirer la poêle du four. 
             Y verser la préparation à fajitas.',
              35, 
              'Difficile', 2,
              8, 
-             'tortilla.jpg'),
+             'tortilla.jpg',
+             'Plat'),
 
              ('POIVRON FARCIS AU BOEUF', 
-            ' 600 g Steaks hachés,
-            4 Poivrons,
+            ' 600g steaks hachés,
+            4 poivrons,
             2 échalotes,
-            1 Petit Oignon,
-            2 gousse(s) Ail,
-            bouquet(s) Persil,
-            bouquet(s) Ciboulette,
-            c. à café Paprika,
-            1 Oeuf,
-            2 c. à soupe Chapelure,
-            Sel,
-            Poivre', 
+            1 petit oignon,
+            2 gousses ail,
+            bouquet persil,
+            bouquet ciboulette,
+            c.à.c paprika,
+            1 oeuf,
+            2 c.à.s chapelure,
+            sel,
+            poivre', 
             ' Changez des traditionnelles tomates farcies au porc. Confectionnez de beaux poivrons farcis à la viande de bœuf. 
             Agrémenté d’herbes fraîches, d’oignon, d’échalote et d’ail, le bœuf haché se parfumera délicatement. ',
-        'Préchauffez le four à th.6 (180 °C).
+        'Étape 1
+        Préchauffez le four à th.6 (180 °C).
         Dorez la viande hachée avec les oignons et les ailes dans une poêle anti-adhésive.
+        Étape 2
         Tailler un oignon
         En même temps, lavez et enlevez l’intérieur des poivrons.
-        N’abîmez pas les couvercles.
+        Étape 3
         Remplissez les poivrons de viande hachée.
         Refermez-les avec les couvercles.
         Graissez un plat à four et disposez-les dessus.
@@ -453,7 +490,57 @@ INSERT INTO "recipe" ("title", "ingredients_list", "description", "steps", "cook
         60, 
         'Difficile', 2,
         3, 
-        'poivron-farci.jpg');
-                    
+        'poivron-farci.jpg',
+        'Plat');
+                
+          ('Soupe Miso', 
+            '1/4 c.à.c d’huile de tournesol, 
+            1/4 c.à.c de gingembre râpé,
+            1/4 d’eau,
+            1/3 gousse d’ail hachées,
+            16.5g de champignon coupés finement,
+            1.5 c.à.s de miso (le miso est un condiment végétarien qu on achète dans les épiceries asiatiques)', 
+            'La soupe miso est souvent servie en accompagnement d’autres plats ou en entrée dans les restaurants japonais, mais elle peut également être préparée à la maison pour une délicieuse et réconfortante collation ou repas léger.',
+        'Étape 1
+       Faire chauffer l’huile dans une casserole sur feu moyen. Ajouter l’ail et les oignons et faire revenir à feu doux,
+       Étape 2 
+       Ajouter le gingembre, les carottes et les champignons. Laisser cuire de 5 à 10 minutes jusqu’à ce que les légumes soient tendres.
+       Étape 3
+       Dissoudre le miso dans 100ml d’eau et l’ajouter ainsi que l’eau restante aux légumes
+       Étape 4
+       Faire cuire quelques minutes (attention, la soupe ne doit pas bouillir une fois le miso ajouté !) et servir.',
+        35, 
+        'Facile', 2,
+        3, 
+        'Soupe_miso.jpeg',
+        'Entrée');
+
+
+                   
+          ('Soupe Miso', 
+            '1/4 c.à.c d’huile de tournesol, 
+            1/4 c.à.c de gingembre râpé,
+            1/4 d’eau,
+            1/3 gousse d’ail hachées,
+            16.5g de champignon coupés finement,
+            1.5 c.à.s de miso (le miso est un condiment végétarien qu on achète dans les épiceries asiatiques)', 
+            'La soupe miso est souvent servie en accompagnement d’autres plats ou en entrée dans les restaurants japonais, mais elle peut également être préparée à la maison pour une délicieuse et réconfortante collation ou repas léger.',
+        'Étape 1
+       Faire chauffer l’huile dans une casserole sur feu moyen. Ajouter l’ail et les oignons et faire revenir à feu doux,
+       Étape 2 
+       Ajouter le gingembre, les carottes et les champignons. Laisser cuire de 5 à 10 minutes jusqu’à ce que les légumes soient tendres.
+       Étape 3
+       Dissoudre le miso dans 100ml d’eau et l’ajouter ainsi que l’eau restante aux légumes
+       Étape 4
+       Faire cuire quelques minutes (attention, la soupe ne doit pas bouillir une fois le miso ajouté !) et servir.',
+        35, 
+        'Facile', 2,
+        3, 
+        'Soupe_miso.jpeg',
+        'Entrée');
+
+
+
+
 
 COMMIT;
