@@ -30,9 +30,6 @@ Recipe.init({
 	userId: {
 		type: DataTypes.INTEGER,
 	},
-    rate: {
-		type: DataTypes.INTEGER,
-	},
     picture: {
 		type: DataTypes.TEXT,
 	},

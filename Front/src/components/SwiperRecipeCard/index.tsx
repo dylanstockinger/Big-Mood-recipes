@@ -149,12 +149,9 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
       <article className=" m-auto text-center  justify-center  sm:w-[800px] w-[300px] ">
         <div className="">
           <p className="sm:leading-normal	 leading-snug sm:text-3xl sm:mb-10 mt-6 p-15  ">
-            Avec O'Food sentez-vous libre de cuisiner selon vos envies. Pas de
-            régimes particulier, juste de la pleine conscience et l'envie de
-            cuisiner meilleur. Aujourd'hui le fait de se limiter, de se
-            controler etc. devient de plus en plus normal. Par ailleurs il est
-            important de préciser que de tels comportements auront un impact sur
-            votre santé mentale. Ce n'est pas ce que nous cherchons.
+            Prenez le temps de cuisiner des recettes simples et variées avec
+            notre séléction spécialement faite pour vous ! Vous allez voir,
+            cuisiner est un vrai jeu d'enfant quand on s'y mets joyeusement.
           </p>
         </div>
       </article>
