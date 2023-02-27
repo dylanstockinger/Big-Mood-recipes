@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export const SearchBar = ({ onSearch }: any) => {
+export const SearchBar = ({}: any) => {
   const [query, setQuery] = useState("");
 
   function handleSubmit(event: any) {
     event.preventDefault();
     console.log(query);
 
-    onSearch(query);
+    // onSearch(query);
   }
   return (
     <form

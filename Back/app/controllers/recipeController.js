@@ -65,7 +65,8 @@ const controller = {
 				title,
 				ingredientsList,
                 description,
-				steps
+				steps,
+				type
 			});
 
 			if (cookingTime) {
@@ -80,6 +81,9 @@ const controller = {
 			if (userId) {
 				newRecipe.userId = userId;
 			}
+			if (type) {
+				newRecipe.type = type
+			}
 
 			await newRecipe.save();
 			res.status(201).json(newRecipe);
@@ -90,50 +94,6 @@ const controller = {
 		}
 	},
 
-	// updateRecipeById: async (req, res) => {
-
-	// 	try {
-	// 		const recipeId = req.params.id;
-	// 		const recipe = await Recipe.findByPk(recipeId);
-
-	// 		if (!recipe) {
-	// 			const error = new Error(`Recipe with id ${recipeId} does not exist.`);
-	// 			return res.status(404).json({ message: error.message });
-	// 		}
-
-	// 		const { title, ingredientsList, description, steps, cookingTime, difficulty, picture } = req.body;
-	// 		console.log(req.body);
-			
-	// 		if (title) {
-	// 			recipe.title = title;
-	// 		}
-	// 		if (ingredientsList) {
-	// 			recipe.ingredientsList = ingredientsList;
-	// 		}
-	// 		if (description) {
-	// 			recipe.description = description;
-	// 		}
-	// 		if (steps) {
-	// 			recipe.steps = steps;
-	// 		}
-	// 		if (cookingTime) {
-	// 			recipe.cookingTime = cookingTime;
-	// 		}
-	// 		if (difficulty) {
-	// 			recipe.difficulty = difficulty;
-	// 		}
-	// 		if (picture) {
-	// 			recipe.picture = picture;
-	// 		}
-
-	// 		await recipe.save();
-	// 		res.status(200).json(recipe);
-
-	// 	} catch (error) {
-	// 		console.error(error);
-	// 		res.status(500).json({ message: error.message });
-	// 	}
-	// },
 
 	deleteRecipeById: async (req, res) => {
 
