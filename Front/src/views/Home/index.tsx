@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SearchBar } from "../../components/SearchBar";
 
 import { SliderComponent } from "../../components/SwiperRecipeCard";
+
 export interface Recipe {
   title: string;
   difficulty: string;
@@ -35,6 +36,7 @@ export const Home = (handleSubmit: any) => {
     <div className="recipes">
       <div>
         <SearchBar onSearch={handleSubmit} />
+
         {/* on explique que recipes vaut les données de data  */}
         <SliderComponent recipes={data} />
       </div>
