@@ -12,7 +12,7 @@ export const Navbar = () => {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="/">
               <span className="flex flex-row text-4xl font-bold text-white mr-8">
-                O'Food <span className=" text-yellow-400  "> . </span>{" "}
+                Big Mood<span className=" text-yellow-400  "> . </span>{" "}
               </span>{" "}
             </Link>
 
@@ -79,13 +79,13 @@ export const Navbar = () => {
         <div className="hidden space-x-2 md:inline-block">
           <Link
             to="/login"
-            className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+            className="px-4 py-2 text-white bg-white sm:text-black hover:bg-gray-200 rounded-md shadow "
           >
             Sign in
           </Link>
           <Link
             to="/register"
-            className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+            className="px-4 bg-yellow-400 hover:bg-yellow-500 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
           >
             Sign up
           </Link>

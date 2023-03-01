@@ -25,7 +25,7 @@ export const SearchBar = ({}: any) => {
 
       <button
         type="submit"
-        className="bg-yellow-400 hover:bg-black hover:text-white text-white font-bold py-2 px-4 rounded-r-md"
+        className="bg-yellow-400 sm:text-black hover:bg-yellow-500  text-white  py-2 px-4 rounded-r-md"
       >
         Rechercher
       </button>

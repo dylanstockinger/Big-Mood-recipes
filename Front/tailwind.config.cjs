@@ -4,7 +4,12 @@ module.exports = {
   mode: "jit",
   
   theme: {
+
+    color: {
+    cassis:'#F56A75',
+      
     
+  },   
     boxShadow: {
       sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
       DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
@@ -22,6 +27,8 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
+      '2xl': '1536px',
+      '3xl': '1700px',
       'tablet': '640px',
       // => @media (min-width: 640px) { ... }
 
