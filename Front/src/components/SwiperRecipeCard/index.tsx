@@ -27,15 +27,15 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
   console.log(dataRecipe.filter((recipe) => recipe.difficulty == "Facile"));
 
   return (
-    <div className="sm:flex sm:flex-wrap sm:justify-center  ">
-      <section className="flex sm:m-8 justify-center ">
+    <div className="3xl:flex 3xl:flex-wrap 3xl:justify-center sm:flex sm:flex-wrap sm:justify-center">
+      <section className="3xl:flex 3xl:justify-center flex sm:m-8 justify-center ">
         <div className="innver__container">
           <h1 className="mt-[1rem] sm:mt-8 mb-4 mt-3 sm:text-5xl text-2xl mb-8 text-center">
             Découvrez les recettes que nous proposons !
           </h1>
           <div className=" ">
             <Swiper
-              className="sm:w-[500px]  w-[350px] sm:h-[550px] sm:scale-90 sm:hover:scale-100 sm:transition   h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
+              className="3xl:w-[550px] 3xl:h-[630px] 3xl:scale-90 3xl:hover:scale-100 3xltransition: sm:w-[500px]  w-[350px] sm:h-[630px] sm:scale-90 sm:hover:scale-100 sm:transition   h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
               modules={[Navigation, Pagination, Autoplay]}
               speed={400}
               autoplay={{
@@ -54,7 +54,7 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
             >
               {shuffled.map((recipe) => (
                 <SwiperSlide className=" flex justify-center" key={recipe.id}>
-                  <div className=" flex flex-col text-center justify-center  sm:w-full w-full  w-300px">
+                  <div className=" 3xl:flex 3xl:flex-col 3xl:text-center  3xl:justify-center  flex flex-col text-center justify-center  sm:w-full w-full  w-300px">
                     <img
                       className="sm:w-full w-full  m-auto "
                       src={`/recipesImage/${recipe.picture}`}
@@ -88,7 +88,7 @@ export const SliderComponent = (recipes: SliderComponentProps) => {
           </h1>
           <div className=" ">
             <Swiper
-              className="sm:w-[500px]  w-[350px] sm:h-[550px] sm:scale-90 sm:hover:scale-100 sm:transition scale-80 hover:scale-90  transition h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
+              className="3xl:w-[550px] 3xl:h-[630px] 3xl:scale-90 3xl:hover:scale-100 3xltransition: sm:w-[500px]  w-[350px] sm:h-[550px] sm:scale-90 sm:hover:scale-100 sm:transition scale-80 hover:scale-90  transition h-full slider sm:shadow-2xl  shadow-lg bg-gradient-to-r from-slate-100 via-slate-200 to-gray-100 rounded-xl bg-white "
               modules={[Navigation, Pagination, Autoplay]}
               pagination={{ clickable: true }}
               speed={400}
